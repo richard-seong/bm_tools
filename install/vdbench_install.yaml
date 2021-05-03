@@ -1,6 +1,6 @@
 ---                                                                                                                                                                                                                  
-- name : cosbench Install                                                                                                                                                                                            
-  hosts: cosbench                                                                                                                                                                                                    
+- name : vdbench Install                                                                                                                                                                                            
+  hosts: vdbench                                                                                                                                                                                                    
   gather_facts: true                                                                                                                                                                                                 
   become: true                                                                                                                                                                                                       
                                                                                                                                                                                                                      
@@ -14,7 +14,6 @@
       name: '{{ item }}'                                                                                                                                                                                             
       state: present                                                                                                                                                                                                 
     with_items:                                                                                                                                                                                                      
-      - wget                                                                                                                                                                                                         
       - java                                                                                                                                                                                                         
   - name: Create Download Folder                                                                                                                                                                                     
     file:                                                                                                                                                                                                            
@@ -22,14 +21,14 @@
       state: directory                                                                                                                                                                                               
   - name: Package Download                                                                                                                                                                                           
     get_url:                                                                                                                                                                                                         
-      url: https://github.com/richard-seong/bm_tools/blob/main/cosbench042.zip                                                                                                                                
+      url: https://github.com/richard-seong/bm_tools/blob/main/vdbench50407.zip                                                                                                                               
       dest: /root/benchmark/download                                                                                                                                                                                 
-  - name: Create cosbench Folder                                                                                                                                                                                     
+  - name: Create vdbench Folder                                                                                                                                                                                     
     file:                                                                                                                                                                                                            
-      path: /root/benchmark/cosbench                                                                                                                                                                                 
+      path: /root/benchmark/vdbench                                                                                                                                                                                 
       state: directory                                                                                                                                                                                               
-  - name: UnZip cosbench Package                                                                                                                                                                                     
+  - name: UnZip vdbench Package                                                                                                                                                                                     
     unarchive:                                                                                                                                                                                                       
-     src: /root/benchmark/download/cosbench*.zip                                                                                                                                                                         
-     dest: /root/benchmark/cosbench/                                                                                                                                                                                 
+     src: /root/benchmark/download/vdbebch*.zip                                                                                                                                                                         
+     dest: /root/benchmark/vdbench/                                                                                                                                                                                 
      remote_src: True 
