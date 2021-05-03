@@ -1,36 +1,36 @@
 ---                                                                                                                                                                                                                  
-- name : cosbench Install                                                                                                                                                                                            
-  hosts: cosbench                                                                                                                                                                                                    
-  gather_facts: true                                                                                                                                                                                                 
-  become: true                                                                                                                                                                                                       
+- name : cosbench Install
+  hosts: cosbench
+  gather_facts: true
+  become: true
                                                                                                                                                                                                                      
-  tasks:                                                                                                                                                                                                             
-  - name: remove firewall                                                                                                                                                                                            
-    yum:                                                                                                                                                                                                             
-      name: firewalld                                                                                                                                                                                                
-      state: absent                                                                                                                                                                                                  
-  - name: Install package                                                                                                                                                                                            
-    yum:                                                                                                                                                                                                             
-      name: '{{ item }}'                                                                                                                                                                                             
-      state: present                                                                                                                                                                                                 
-    with_items:                                                                                                                                                                                                      
-      - wget                                                                                                                                                                                                         
-      - java                                                                                                                                                                                                         
-      - unzip                                                                                                                                                                                                         
-  - name: Create Download Folder                                                                                                                                                                                     
-    file:                                                                                                                                                                                                            
-      path: /root/benchmark/download                                                                                                                                                                                 
-      state: directory                                                                                                                                                                                               
-  - name: Package Download                                                                                                                                                                                           
-    get_url:                                                                                                                                                                                                         
-      url: https://github.com/richard-seong/bm_tools/blob/main/cosbench042.zip                                                                                                                                
-      dest: /root/benchmark/download                                                                                                                                                                                 
-  - name: Create cosbench Folder                                                                                                                                                                                     
-    file:                                                                                                                                                                                                            
-      path: /root/benchmark/cosbench                                                                                                                                                                                 
-      state: directory                                                                                                                                                                                               
-  - name: UnZip cosbench Package                                                                                                                                                                                     
-    unarchive:                                                                                                                                                                                                       
-     src: /root/benchmark/download/cosbench042.zip                                                                                                                                                                         
-     dest: /root/benchmark/cosbench/                                                                                                                                                                                 
-     remote_src: True 
+  tasks:
+  - name: remove firewall
+    yum:
+      name: firewalld
+      state: absent
+  - name: Install package
+    yum:
+      name: '{{ item }}'
+      state: present
+    with_items:
+      - wget
+      - java
+      - unzip
+  - name: Create Download Folder
+    file:
+      path: /root/benchmark/download
+      state: directory
+  - name: Package Download
+    get_url:
+      url: https://github.com/richard-seong/bm_tools/blob/main/cosbench042.zip
+      dest: /root/benchmark/download
+  - name: Create cosbench Folder
+    file:
+      path: /root/benchmark/cosbench
+      state: directory
+  - name: UnZip cosbench Package
+    unarchive:
+     src: /root/benchmark/download/cosbench042.zip
+     dest: /root/benchmark/cosbench/
+     remote_src: True
