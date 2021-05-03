@@ -16,7 +16,6 @@
     with_items:
       - java
       - unzip
-      - gtar
   - name: Create Download Folder
     file:
       path: /root/benchmark/download
