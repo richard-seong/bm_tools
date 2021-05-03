@@ -32,4 +32,4 @@
     unarchive:
      src: /root/benchmark/download/vdbench50407.zip
      dest: /root/benchmark/vdbench/
-     remote_src: yes
+     remote_src: True
