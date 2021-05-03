@@ -15,6 +15,7 @@
       state: present                                                                                                                                                                                                 
     with_items:                                                                                                                                                                                                      
       - java                                                                                                                                                                                                         
+      - unzip                                                                                                                                                                                                         
   - name: Create Download Folder                                                                                                                                                                                     
     file:                                                                                                                                                                                                            
       path: /root/benchmark/download                                                                                                                                                                                 
@@ -29,6 +30,6 @@
       state: directory                                                                                                                                                                                               
   - name: UnZip vdbench Package                                                                                                                                                                                     
     unarchive:                                                                                                                                                                                                       
-     src: /root/benchmark/download/vdbebch*.zip                                                                                                                                                                         
+     src: /root/benchmark/download/vdbench50407.zip                                                                                                                                                                         
      dest: /root/benchmark/vdbench/                                                                                                                                                                                 
      remote_src: True 

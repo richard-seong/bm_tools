@@ -16,6 +16,7 @@
     with_items:                                                                                                                                                                                                      
       - wget                                                                                                                                                                                                         
       - java                                                                                                                                                                                                         
+      - unzip                                                                                                                                                                                                         
   - name: Create Download Folder                                                                                                                                                                                     
     file:                                                                                                                                                                                                            
       path: /root/benchmark/download                                                                                                                                                                                 
@@ -30,6 +31,6 @@
       state: directory                                                                                                                                                                                               
   - name: UnZip cosbench Package                                                                                                                                                                                     
     unarchive:                                                                                                                                                                                                       
-     src: /root/benchmark/download/cosbench*.zip                                                                                                                                                                         
+     src: /root/benchmark/download/cosbench042.zip                                                                                                                                                                         
      dest: /root/benchmark/cosbench/                                                                                                                                                                                 
      remote_src: True 
