@@ -36,3 +36,7 @@
      src: /root/benchmark/download/cosbench042.zip
      dest: /root/benchmark/cosbench/
      remote_src: True
+  - name: Add executable permission
+    shell: "chmod +x *.sh"
+    args:
+      chdir: /root/benchmark/cosbench/0.4.2.c4/
