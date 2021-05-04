@@ -17,6 +17,8 @@
       - wget
       - java
       - unzip
+      - nc
+      - java-1.7.0-openjdk
   - name: Create Download Folder
     file:
       path: /root/benchmark/download
