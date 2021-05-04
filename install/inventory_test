@@ -1,0 +1,9 @@
+[cosbench]
+cosbench01 ansible_host=192.168.10.238 ansible_user=root
+cosbench02 ansible_host=192.168.10.239 ansible_user=root
+cosbench03 ansible_host=192.168.10.240 ansible_user=root
+
+[vdbench]
+vdbench01 ansible_host=192.168.10.238 ansible_user=root
+vdbench02 ansible_host=192.168.10.239 ansible_user=root
+vdbench03 ansible_host=192.168.10.240 ansible_user=root
