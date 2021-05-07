@@ -1,0 +1,11 @@
+[cosbench]
+cosbench01 ansible_host=172.16.100.169
+cosbench02 ansible_host=172.16.100.145
+
+[vdbench]
+vdbench01 ansible_host=172.16.100.169
+vdbench02 ansible_host=172.16.100.145
+
+[all:vars]
+ansible_user=root
+ansible_password='test1234!!'

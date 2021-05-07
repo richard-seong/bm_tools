@@ -1,0 +1,40 @@
+---
+- name : vdbench Install
+  hosts: vdbench
+  gather_facts: true
+  become: true
+                                                                                                                                                                                                                     
+  tasks:
+  - name: remove firewall
+    yum:
+      name: firewalld
+      state: absent
+  - name: Install package
+    yum:
+      name: '{{ item }}'
+      state: present
+    with_items:
+      - java
+      - unzip
+  - name: Create Download Folder
+    file:
+      path: /root/benchmark/download
+      state: directory
+#  - name: Copy Package
+#    ansible.builtin.copy:
+#      src: /home/richard/git/bm_tools/vdbench50407.zip
+#      dest: /root/benchmark/download
+#      remote_src: yes
+  - name: Package Download
+    get_url:
+      url: https://github.com/richard-seong/bm_tools/raw/main/vdbench50407.zip
+      dest: /root/benchmark/download
+  - name: Create vdbench Folder
+    file:
+      path: /root/benchmark/vdbench
+      state: directory
+  - name: UnZip vdbench Package
+    unarchive:
+     src: /root/benchmark/download/vdbench50407.zip
+     dest: /root/benchmark/vdbench/
+     remote_src: True
