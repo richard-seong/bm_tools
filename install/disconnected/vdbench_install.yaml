@@ -27,7 +27,7 @@
 #      remote_src: yes
   - name: Package Download
     get_url:
-      url: https://github.com/richard-seong/bm_tools/raw/main/vdbench50407.zip
+      url: ftp://172.18.0.18/pub/centos/bmtools/vdbench50407.zip
       dest: /root/benchmark/download
   - name: Create vdbench Folder
     file:

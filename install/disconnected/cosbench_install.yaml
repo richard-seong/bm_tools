@@ -25,7 +25,7 @@
       state: directory
   - name: Package Download
     get_url:
-      url: https://github.com/richard-seong/bm_tools/raw/main/cosbench042.zip
+      url: ftp://172.18.0.18/pub/centos/bmtools/cosbench042.zip
       dest: /root/benchmark/download
   - name: Create cosbench Folder
     file:
