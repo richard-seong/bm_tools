@@ -1,0 +1,152 @@
+[kafka]
+kafka01 ansible_host=172.18.0.161
+kafka02 ansible_host=172.18.0.162
+kafka03 ansible_host=172.18.0.163
+kafka04 ansible_host=172.18.0.176
+kafka05 ansible_host=172.18.0.177
+kafka06 ansible_host=172.18.0.178
+kafka07 ansible_host=172.18.0.119
+kafka08 ansible_host=172.18.0.120
+
+[zookeeper]
+zookeeper01 ansible_host=172.18.0.164
+zookeeper02 ansible_host=172.18.0.165
+zookeeper03 ansible_host=172.18.0.166
+
+[confluentmanage]
+schema01 ansible_host=172.18.0.167
+controlcenter01 ansible_host=172.18.0.168
+
+[ksql]
+ksqldb01 ansible_host=172.18.0.55
+ksqldb02 ansible_host=172.18.0.56
+ksqldb03 ansible_host=172.18.0.57
+ksqldb04 ansible_host=172.18.0.58
+ksqldb05 ansible_host=172.18.0.59
+ksqldb06 ansible_host=172.18.0.60
+ksqldb07 ansible_host=172.18.0.61
+ksqldb08 ansible_host=172.18.0.62
+ksqldb09 ansible_host=172.18.0.63
+ksqldb10 ansible_host=172.18.0.64
+
+[conworker]
+conworker01 ansible_host=172.18.0.173
+conworker02 ansible_host=172.18.0.174
+conworker03 ansible_host=172.18.0.175
+conworker04 ansible_host=172.18.0.242
+conworker05 ansible_host=172.18.0.243
+conworker06 ansible_host=172.18.0.244
+conworker07 ansible_host=172.18.0.245
+conworker08 ansible_host=172.18.0.246
+conworker09 ansible_host=172.18.0.226
+conworker10 ansible_host=172.18.0.227
+conworker11 ansible_host=172.18.0.83
+conworker12 ansible_host=172.18.0.84
+conworker13 ansible_host=172.18.0.85
+conworker14 ansible_host=172.18.0.86
+conworker15 ansible_host=172.18.0.123
+conworker16 ansible_host=172.18.0.124
+conworker17 ansible_host=172.18.0.125
+conworker18 ansible_host=172.18.0.126
+conworker19 ansible_host=172.18.0.127
+conworker20 ansible_host=172.18.0.128
+conworker21 ansible_host=172.18.0.129
+conworker22 ansible_host=172.18.0.130
+conworker23 ansible_host=172.18.0.131
+conworker24 ansible_host=172.18.0.132
+conworker25 ansible_host=172.18.0.133
+conworker26 ansible_host=172.18.0.134
+conworker27 ansible_host=172.18.0.135
+conworker28 ansible_host=172.18.0.136
+
+[confluent:children]
+kafka
+zookeeper
+confluentmanage
+ksql
+conworker
+
+[master]
+master01 ansible_host=172.18.0.229
+master02 ansible_host=172.18.0.230
+utility01 ansible_host=172.18.0.228
+
+[worker]
+worker01 ansible_host=172.18.0.231
+worker02 ansible_host=172.18.0.232
+worker03 ansible_host=172.18.0.233
+worker04 ansible_host=172.18.0.234
+worker05 ansible_host=172.18.0.235
+worker06 ansible_host=172.18.0.236
+worker07 ansible_host=172.18.0.237
+worker08 ansible_host=172.18.0.238
+worker09 ansible_host=172.18.0.239
+
+[nifi]
+nifi01 ansible_host=172.18.0.137
+nifi02 ansible_host=172.18.0.138
+nifi03 ansible_host=172.18.0.139
+nifi04 ansible_host=172.18.0.140
+
+[hbase]
+hbase01 ansible_host=172.18.0.50
+hbase02 ansible_host=172.18.0.51
+hbase03 ansible_host=172.18.0.52
+hbase04 ansible_host=172.18.0.53
+hbase05 ansible_host=172.18.0.54
+
+[cloudera:children]
+master
+worker
+nifi
+hbase
+
+[presto]
+presto01 ansible_host=172.18.0.141
+presto02 ansible_host=172.18.0.142
+presto03 ansible_host=172.18.0.143
+presto04 ansible_host=172.18.0.144
+presto05 ansible_host=172.18.0.145
+presto06 ansible_host=172.18.0.146
+presto07 ansible_host=172.18.0.147
+presto08 ansible_host=172.18.0.148
+presto09 ansible_host=172.18.0.149
+
+[solace]
+solace_agent ansible_host=172.18.0.82
+solace ansible_host=172.18.0.150
+
+[origin]
+ftp ansible_host=172.18.0.250
+orisource ansible_host=172.18.0.249
+highway ansible_host=172.18.0.180
+oracle ansible_host=172.18.0.179
+
+[striim]
+striim01 ansible_host=172.18.0.224
+striim02 ansible_host=172.18.0.225
+
+[equalum]
+engine01 ansible_host=172.18.0.221
+engine02 ansible_host=172.18.0.222
+engine03 ansible_host=172.18.0.223
+
+[all:children]
+confluent
+cloudera
+presto
+solace
+striim
+qeualum
+origin
+
+[confluent:vars]
+ansible_user=root
+ansible_password='imsi00!@'
+
+[origin:vars]
+ansible_user=root
+
+[all:vars]
+ansible_user=root
+ansible_password='SDCpoc1234!'
