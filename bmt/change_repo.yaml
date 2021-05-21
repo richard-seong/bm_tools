@@ -1,6 +1,6 @@
 ---
 - name : check Process
-  hosts: hbase
+  hosts: digital
   gather_facts: true
   become: true
 
