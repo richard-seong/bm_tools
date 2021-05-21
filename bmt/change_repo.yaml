@@ -1,0 +1,22 @@
+---
+- name : check Process
+  hosts: striim
+  gather_facts: true
+  become: true
+
+  tasks:
+  - name: Change Repository 
+    ansible.builtin.shell: |
+      curl http://172.18.0.18/centos.repo > /etc/yum.repos.d/centos.repo
+  - name: Install package
+    yum:
+      name: '{{ item }}'
+      state: present
+    with_items:
+      - wget
+#  - name: Started Cosbench Driver
+#    ansible.builtin.shell: |
+#      ntpq -p
+#      cat /etc/resolv.conf | grep nameserver
+#      cat /etc/ntp.conf | grep server
+#      ls /etc/yum.repos.d/ | grep repo

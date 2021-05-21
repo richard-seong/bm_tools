@@ -114,7 +114,7 @@ presto09 ansible_host=172.18.0.149
 
 [solace]
 solace_agent ansible_host=172.18.0.82
-solace ansible_host=172.18.0.150
+#solace ansible_host=172.18.0.150
 
 [origin]
 ftp ansible_host=172.18.0.250
