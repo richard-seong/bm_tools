@@ -131,11 +131,25 @@ engine01 ansible_host=172.18.0.221
 engine02 ansible_host=172.18.0.222
 engine03 ansible_host=172.18.0.223
 
+[digital]
+digital01 ansible_host=172.18.0.181
+digital02 ansible_host=172.18.0.182
+digital03 ansible_host=172.18.0.183
+digital04 ansible_host=172.18.0.184
+digital05 ansible_host=172.18.0.185
+digital06 ansible_host=172.18.0.186
+digital07 ansible_host=172.18.0.187
+digital08 ansible_host=172.18.0.188
+digital09 ansible_host=172.18.0.189
+digital10 ansible_host=172.18.0.190
+digital_agent ansible_host=172.18.0.87
+
 [all:children]
 confluent
 cloudera
 presto
 solace
+digital
 striim
 qeualum
 origin
