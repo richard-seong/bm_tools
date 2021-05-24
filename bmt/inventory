@@ -116,7 +116,11 @@ presto08 ansible_host=172.18.0.148
 presto09 ansible_host=172.18.0.149
 
 [solace]
-solace_agent ansible_host=172.18.0.82
+solace_agent01 ansible_host=172.18.0.82
+solace_agent02 ansible_host=172.18.0.88
+solace_agent03 ansible_host=172.18.0.89
+solace_agent04 ansible_host=172.18.0.90
+solace_agent05 ansible_host=172.18.0.91
 #solace ansible_host=172.18.0.150
 
 [origin]
@@ -146,6 +150,23 @@ digital08 ansible_host=172.18.0.188
 digital09 ansible_host=172.18.0.189
 digital10 ansible_host=172.18.0.190
 digital_agent ansible_host=172.18.0.87
+
+[bench]
+bench01 ansible_host=172.18.0.101
+bench02 ansible_host=172.18.0.102
+bench03 ansible_host=172.18.0.103
+bench04 ansible_host=172.18.0.104
+bench05 ansible_host=172.18.0.105
+bench06 ansible_host=172.18.0.106
+bench07 ansible_host=172.18.0.107
+bench08 ansible_host=172.18.0.108
+bench09 ansible_host=172.18.0.109
+bench10 ansible_host=172.18.0.110
+bench11 ansible_host=172.18.0.111
+bench12 ansible_host=172.18.0.112
+bench13 ansible_host=172.18.0.113
+bench14 ansible_host=172.18.0.114
+bench15 ansible_host=172.18.0.115
 
 [all:children]
 confluent
