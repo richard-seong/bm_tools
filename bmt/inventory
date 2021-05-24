@@ -8,6 +8,16 @@ kafka06 ansible_host=172.18.0.178
 kafka07 ansible_host=172.18.0.119
 kafka08 ansible_host=172.18.0.120
 
+[kafka2]
+kafka09 ansible_host=172.18.0.244
+kafka10 ansible_host=172.18.0.245
+kafka11 ansible_host=172.18.0.227
+kafka12 ansible_host=172.18.0.83
+kafka13 ansible_host=172.18.0.84
+kafka14 ansible_host=172.18.0.85
+kafka15 ansible_host=172.18.0.86
+kafka16 ansible_host=172.18.0.123
+
 [zookeeper]
 zookeeper01 ansible_host=172.18.0.164
 zookeeper02 ansible_host=172.18.0.165
@@ -35,16 +45,8 @@ conworker02 ansible_host=172.18.0.174
 conworker03 ansible_host=172.18.0.175
 conworker04 ansible_host=172.18.0.242
 conworker05 ansible_host=172.18.0.243
-conworker06 ansible_host=172.18.0.244
-conworker07 ansible_host=172.18.0.245
 conworker08 ansible_host=172.18.0.246
 conworker09 ansible_host=172.18.0.226
-conworker10 ansible_host=172.18.0.227
-conworker11 ansible_host=172.18.0.83
-conworker12 ansible_host=172.18.0.84
-conworker13 ansible_host=172.18.0.85
-conworker14 ansible_host=172.18.0.86
-conworker15 ansible_host=172.18.0.123
 conworker16 ansible_host=172.18.0.124
 conworker17 ansible_host=172.18.0.125
 conworker18 ansible_host=172.18.0.126
@@ -61,6 +63,7 @@ conworker28 ansible_host=172.18.0.136
 
 [confluent:children]
 kafka
+kafka2
 zookeeper
 confluentmanage
 ksql
