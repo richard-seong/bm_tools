@@ -175,7 +175,7 @@ presto
 solace
 digital
 striim
-qeualum
+equalum
 origin
 
 [confluent:vars]
