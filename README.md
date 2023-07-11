@@ -1,6 +1,6 @@
 # bm_tools
 
-## 사용 방법
+## vdbench 사용 방법 (ubuntu)
 
 - inventory 수정
 ```
