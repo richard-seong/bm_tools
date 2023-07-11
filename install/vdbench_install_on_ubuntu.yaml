@@ -1,0 +1,43 @@
+---
+- name : vdbench Install
+  hosts: vdbench
+  gather_facts: true
+  become: true
+
+  tasks:
+  - name: remove firewall
+    apt:
+      name: firewalld
+      state: absent
+  - name: Install package
+    apt:
+      name: '{{ item }}'
+      state: present
+    with_items:
+      - default-jre
+      - curl
+      - unzip
+  - name: Create Download Folder
+    file:
+      path: /home/pure/benchmark/download
+      state: directory
+  - name: Package Download
+    get_url:
+      url: https://github.com/richard-seong/bm_tools/raw/main/vdbench50407.zip
+      dest: /home/pure/benchmark/download
+  - name: Create vdbench Folder
+    file:
+      path: /home/pure/benchmark/vdbench
+      state: directory
+  - name: UnZip vdbench Package
+    unarchive:
+     src: /home/pure/benchmark/download/vdbench50407.zip
+     dest: /home/pure/benchmark/vdbench/
+     remote_src: True
+  - name: change directory owner
+    file:
+      path: /home/pure/benchmark
+      state: directory
+      recurse: true
+      owner: pure
+      group: pure
